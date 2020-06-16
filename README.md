@@ -36,7 +36,4 @@ jupyter notebook
 ```
 This will open a notebook session in the browser.
 - The pre-build unity environment `Reacher.app.zip` is also included in this repo.
-- So, we can just use the ` `Continuous_Control.ipynb` notebook to train and run the agent. All codes are included in that notebook.
-
-
-
+- So, we can just use the `Continuous_Control.ipynb` notebook to train and run the agent. All codes are included in that notebook.
