@@ -17,3 +17,9 @@ In this environment, a double-jointed arm can move to target locations. A reward
 The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with 4 numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 
 ## How to Navigate this Repo
+The repo consists of the following files:
+- `Continuous_Control.ipynb` contains a jupyter notebook with all the codes to train and run the agent.
+- `Report.MD` contains description of the algorithm and hyper-parameters and performance of the algorithm.
+- `checkpoint_actor_final.pth` and `checkpoint_critic_final.pth` contains the weights of trained actor and critic neural network. See  `Continuous_Control.ipynb` for example of how to load these weights.
+
+## Setup / How to Run?
