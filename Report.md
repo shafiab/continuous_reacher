@@ -59,4 +59,17 @@ A reward vs episode plot is presented below. While others have success in fewer 
 ![Trained Agents][image_1]
 
 ## Saved Model
+- Saved actor weights [here](https://github.com/shafiab/continuous_reacher/blob/master/checkpoint_actor_final.pth)
+- Saved critic weights [here](https://github.com/shafiab/continuous_reacher/blob/master/checkpoint_critic_final.pth)
+- The loads can be loaded by following the code in the [notebook](https://github.com/shafiab/continuous_reacher/blob/master/Continuous_Control.ipynb)
+- Since I trained the model using gpu on udacity workspace and then loaded the weight on my macbook to see the trained model at work, I faced an error. Some stack overflow search suggested to include `map_location={'cuda:0': 'cpu'}` while loading the models on cpu and it woked for me.
+```
+    agent.actor.load_state_dict(torch.load('checkpoint_actor_final.pth', map_location={'cuda:0': 'cpu'}))
+    agent.critic.load_state_dict(torch.load('checkpoint_critic_final.pth', map_location={'cuda:0': 'cpu'}))
+```
+
 ## Future Work
+Few future ideas and improvement can be done here:
+- I trained using the the first version containing a single agent. The second version  contains 20 identical agents, each with its own copy of the environment. In the second version,  multiple agents can potentially share experience to accelerate learning. It would be an interesting extention to try out.
+- The convergence took some time in my case. It would be interesting to do some tweaking with the hyperparameters to see if its possible to improve the convergence speed, in particular the UPDATE_EVERY parameter that I added.
+- Other algorithms, e.g. Trust Region Policy Optimization (TRPO), Truncated Natural Policy Gradient (TNPG), Distributed Distributional Deterministic Policy Gradients (D4PG) as suggested in the project page could be interesting to try out.
